@@ -26,9 +26,9 @@ router.post('/note', (req, res) => {
   req.body.id = note.length.toString();
 
   if (!validateNote(req.body)) {
-    res.status(400).send('The animal is not properly formatted.');
+    res.status(400).send('The note is not properly formatted.');
   } else {
-    const animal = createNewNotes(req.body, note);
+    const note = createNewNotes(req.body, note);
     res.json(note);
   }
 });
