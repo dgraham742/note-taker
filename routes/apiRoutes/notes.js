@@ -28,8 +28,8 @@ router.post('/note', (req, res) => {
   if (!validateNote(req.body)) {
     res.status(400).send('The animal is not properly formatted.');
   } else {
-    const animal = createNewAnimal(req.body, animals);
-    res.json(animal);
+    const animal = createNewNotes(req.body, note);
+    res.json(note);
   }
 });
 
