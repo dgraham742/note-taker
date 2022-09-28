@@ -1,7 +1,7 @@
 //GET routes and POST routes
 
 const router = require('express').Router();
-const { filterByQuery, findById, createNewNote, validateNote } = require('../../lib/note.js');
+const { filterByQuery, findById, createNewNotes, validateNote } = require('../../lib/note.js');
 const { note } = require('../../db/db.json');
 
 router.get('/note', (req, res) => {
@@ -21,11 +21,11 @@ router.get('/note/:id', (req, res) => {
   }
 });
 
-router.post('/animals', (req, res) => {
+router.post('/note', (req, res) => {
   // set id based on what the next index of the array will be
-  req.body.id = animals.length.toString();
+  req.body.id = note.length.toString();
 
-  if (!validateAnimal(req.body)) {
+  if (!validateNote(req.body)) {
     res.status(400).send('The animal is not properly formatted.');
   } else {
     const animal = createNewAnimal(req.body, animals);
