@@ -1,6 +1,6 @@
 //GET routes and POST routes
 
-const router = require('express').Router();
+const router = require('express').router();
 const { filterByQuery, findById, createNewNotes, validateNote } = require('../../lib/note.js');
 const { note } = require('../../db/db.json');
 
